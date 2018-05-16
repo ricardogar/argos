@@ -1,0 +1,110 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myReportLabel" jhiTranslate="argosApp.report.home.createOrEditLabel">Create or edit a Report</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!report.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="report.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.tsm" for="field_tsm">Tsm</label>
+            <input type="text" class="form-control" name="tsm" id="field_tsm"
+                [(ngModel)]="report.tsm" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.domain" for="field_domain">Domain</label>
+            <input type="text" class="form-control" name="domain" id="field_domain"
+                [(ngModel)]="report.domain" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.schedule" for="field_schedule">Schedule</label>
+            <input type="text" class="form-control" name="schedule" id="field_schedule"
+                [(ngModel)]="report.schedule" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.server" for="field_server">Server</label>
+            <input type="text" class="form-control" name="server" id="field_server"
+                [(ngModel)]="report.server" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.datetimefalla" for="field_datetimefalla">Datetimefalla</label>
+            <div class="d-flex">
+                <input id="field_datetimefalla" type="datetime-local" class="form-control" name="datetimefalla" [(ngModel)]="report.datetimefalla"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.status" for="field_status">Status</label>
+            <select class="form-control" name="status" [(ngModel)]="report.status" id="field_status" >
+                <option value="PENDIENTE">{{'argosApp.STATUS.PENDIENTE' | translate}}</option>
+                <option value="ATENDIDO">{{'argosApp.STATUS.ATENDIDO' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.rework" for="field_rework">Rework</label>
+            <select class="form-control" name="rework" [(ngModel)]="report.rework" id="field_rework" >
+                <option value="NO">{{'argosApp.REWORK.NO' | translate}}</option>
+                <option value="SI">{{'argosApp.REWORK.SI' | translate}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.error" for="field_error">Error</label>
+            <input type="text" class="form-control" name="error" id="field_error"
+                [(ngModel)]="report.error" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.code" for="field_code">Code</label>
+            <input type="text" class="form-control" name="code" id="field_code"
+                [(ngModel)]="report.code" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.datetimereworkini" for="field_datetimereworkini">Datetimereworkini</label>
+            <div class="d-flex">
+                <input id="field_datetimereworkini" type="datetime-local" class="form-control" name="datetimereworkini" [(ngModel)]="report.datetimereworkini"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.datetimereworkfin" for="field_datetimereworkfin">Datetimereworkfin</label>
+            <div class="d-flex">
+                <input id="field_datetimereworkfin" type="datetime-local" class="form-control" name="datetimereworkfin" [(ngModel)]="report.datetimereworkfin"
+                />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.ticket" for="field_ticket">Ticket</label>
+            <input type="text" class="form-control" name="ticket" id="field_ticket"
+                [(ngModel)]="report.ticket" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.comment" for="field_comment">Comment</label>
+            <input type="text" class="form-control" name="comment" id="field_comment"
+                [(ngModel)]="report.comment" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.user" for="field_user">User</label>
+            <input type="text" class="form-control" name="user" id="field_user"
+                [(ngModel)]="report.user" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="argosApp.report.act" for="field_act">Act</label>
+            <input type="text" class="form-control" name="act" id="field_act"
+                [(ngModel)]="report.act" />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

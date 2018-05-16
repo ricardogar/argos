@@ -1,0 +1,75 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "tsm",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "domain",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "schedule",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "server",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datetimefalla",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "STATUS",
+            "fieldValues": "PENDIENTE,ATENDIDO"
+        },
+        {
+            "fieldName": "rework",
+            "fieldType": "REWORK",
+            "fieldValues": "NO,SI"
+        },
+        {
+            "fieldName": "error",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "code",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datetimereworkini",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "datetimereworkfin",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "ticket",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "user",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "act",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180516214922",
+    "entityTableName": "report",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mySuffix"
+}
