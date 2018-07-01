@@ -1,0 +1,30 @@
+entity Report {
+	id String,
+    tsm String,
+	domain String,
+    schedule String,
+	server String,
+    datetime_falla ZonedDateTime,
+    status STATUS,
+	rework REWORK,
+	error String,
+    code String,
+	datetime_rework_ini ZonedDateTime,
+    datetime_rework_fin ZonedDateTime,
+	ticket String,
+    comment String,
+	user String,
+    act String
+}
+
+enum STATUS {
+    PENDIENTE, ATENDIDO
+}
+
+enum REWORK {
+    NO, SI
+}
+paginate Report with pagination
+
+// Set an angular suffix
+angularSuffix * with mySuffix

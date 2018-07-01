@@ -1,0 +1,9 @@
+{
+    "argosApp": {
+        "STATUS" : {
+            "null": "",
+            "PENDIENTE": "PENDIENTE",
+            "ATENDIDO": "ATENDIDO"
+        }
+    }
+}

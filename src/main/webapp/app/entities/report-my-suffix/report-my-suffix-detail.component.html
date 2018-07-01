@@ -1,0 +1,82 @@
+
+<div *ngIf="report">
+    <h2><span jhiTranslate="argosApp.report.detail.title">Report</span> {{report.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="argosApp.report.tsm">Tsm</span></dt>
+        <dd>
+            <span>{{report.tsm}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.domain">Domain</span></dt>
+        <dd>
+            <span>{{report.domain}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.schedule">Schedule</span></dt>
+        <dd>
+            <span>{{report.schedule}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.server">Server</span></dt>
+        <dd>
+            <span>{{report.server}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.datetimefalla">Datetimefalla</span></dt>
+        <dd>
+            <span>{{report.datetimefalla | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.status">Status</span></dt>
+        <dd>
+            <span jhiTranslate="{{'argosApp.STATUS.' + report.status}}">{{report.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.rework">Rework</span></dt>
+        <dd>
+            <span jhiTranslate="{{'argosApp.REWORK.' + report.rework}}">{{report.rework}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.error">Error</span></dt>
+        <dd>
+            <span>{{report.error}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.code">Code</span></dt>
+        <dd>
+            <span>{{report.code}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.datetimereworkini">Datetimereworkini</span></dt>
+        <dd>
+            <span>{{report.datetimereworkini | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.datetimereworkfin">Datetimereworkfin</span></dt>
+        <dd>
+            <span>{{report.datetimereworkfin | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.ticket">Ticket</span></dt>
+        <dd>
+            <span>{{report.ticket}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.comment">Comment</span></dt>
+        <dd>
+            <span>{{report.comment}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.user">User</span></dt>
+        <dd>
+            <span>{{report.user}}</span>
+        </dd>
+        <dt><span jhiTranslate="argosApp.report.act">Act</span></dt>
+        <dd>
+            <span>{{report.act}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'report-my-suffix/'+ report.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
